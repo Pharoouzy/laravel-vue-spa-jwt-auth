@@ -31,4 +31,20 @@ class AuthController extends Controller {
             'status' => 'success'
         ])->header('Authorization', $token);
     }
+
+    // fetches user data
+    public function user(Request $request) {
+        $user = User::find(Auth::user()->id);
+        return response([
+            'status' => 'success',
+            'data' => $user
+        ]);
+    }
+
+    // refreshes the current token while checking if it's valid
+    public function refresh() {
+        return response([
+            'status' => 'success'
+        ]);
+    }
 }
