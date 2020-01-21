@@ -26,3 +26,38 @@
         </form>
     </div>
 </template>
+
+<script>
+export default {
+    data(){
+        return {
+            name: '',
+            email: '',
+            password: '',
+            error: false,
+            errors: {},
+            success: false
+        }
+    },
+    methods: {
+        register() {
+            var app = this
+            this.$auth.register({
+                data: {
+                    name: app.name,
+                    email: app.email,
+                    password: app.password
+                }, 
+                success: function () {
+                    app.success = true
+                },
+                error: function (res) {
+                    app.error = true;
+                    app.errors = res.response.data.errors;
+                },
+                redirect: null
+            });                
+        }
+    }
+}
+</script>
