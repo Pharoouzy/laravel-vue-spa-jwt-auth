@@ -24,20 +24,31 @@ const router = new VueRouter({
         {
             path: '/register',
             name: 'register',
-            component: Register
+            component: Register,
+            meta: {
+                auth: false
+            }
         },
         {
             path: '/login',
             name: 'login',
-            component: Login
+            component: Login,
+            meta: {
+                auth: false
+            }
         },
         {
             path: '/dashboard',
             name: 'dashboard',
-            component: Dashboard
+            component: Dashboard,
+            meta: {
+                auth: true
+            }
         }
     ]
 })
+
+Vue.router = router
 
 new Vue({
     el: '#app',

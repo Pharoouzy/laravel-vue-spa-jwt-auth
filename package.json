@@ -21,5 +21,8 @@
         "vue-loader": "^15.8.3",
         "vue-router": "^3.1.5",
         "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "@websanova/vue-auth": "^2.21.15-beta"
     }
 }
