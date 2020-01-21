@@ -56,7 +56,8 @@ export default {
                     app.errors = res.response.data.errors;
                 },
                 redirect: null
-            });                
+            }); 
+            console.log(app.name);               
         }
     }
 }

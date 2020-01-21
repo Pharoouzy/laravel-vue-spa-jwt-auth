@@ -3169,6 +3169,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         redirect: null
       });
+      console.log(app.name);
     }
   }
 });
