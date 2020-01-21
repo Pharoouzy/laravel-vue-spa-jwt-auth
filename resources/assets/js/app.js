@@ -10,6 +10,8 @@ import Login from './components/Login'
 
 Vue.use(VueRouter)
 
+Vue.use(VueAxios, axios)
+
 const router = new VueRouter({
     routes: [
         {
