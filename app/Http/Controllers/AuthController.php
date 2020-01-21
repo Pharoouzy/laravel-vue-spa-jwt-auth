@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
+use App\User;
+use Auth;
+use JWTAuth;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use App\Http\Requests\RegisterFormRequest;
 
 class AuthController extends Controller {
     //
@@ -20,6 +26,7 @@ class AuthController extends Controller {
 
     public function login(Request $request) {
         $credentials = $request->only('email', 'password');
+        $token = null;
         if (!$token = JWTAuth::attempt($credentials)) {
             return response([
                 'status' => 'error',

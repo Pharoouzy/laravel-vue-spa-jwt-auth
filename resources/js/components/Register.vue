@@ -31,9 +31,9 @@
 export default {
     data(){
         return {
-            name: '',
-            email: '',
-            password: '',
+            name: 'pharoouzy',
+            email: 'pharoouzy@gmail.com',
+            password: 'pharoouzy',
             error: false,
             errors: {},
             success: false

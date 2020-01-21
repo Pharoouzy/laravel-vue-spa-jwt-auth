@@ -1,9 +1,10 @@
-require('./bootstrap');
+// require('./bootstrap');
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueAuth from '@websanova/vue-auth'
 import App from './App.vue'
 import Home from './components/Home.vue'
 import Dashboard from './components/Dashboard.vue'
@@ -52,7 +53,7 @@ const router = new VueRouter({
 
 Vue.router = router
 
-Vue.use(require('@websanova/vue-auth'), {
+Vue.use(VueAuth, {
     //configures vue-auth to use the bearer driver which basically adds the authentication token to the request header during requests and reads and parses the token from server responses.
     auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
     // configures vue-auth to use the axios http driver, since I am using axios for http requests.

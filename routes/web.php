@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('auth/register', 'AuthController@resgister');
+// Route::post('auth/register', 'AuthController@register');
