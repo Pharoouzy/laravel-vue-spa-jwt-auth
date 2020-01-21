@@ -1,5 +1,5 @@
 <template>
-    <div class="panel panel-default">
+    <div class="panel panel-default m-t-25">
         <div class="panel-heading">
             <nav>
                 <ul class="list-inline">
