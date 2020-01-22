@@ -1,15 +1,16 @@
 // require('./bootstrap');
 
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 import axios from 'axios'
-import VueAxios from 'vue-axios'
-import VueAuth from '@websanova/vue-auth'
 import App from './App.vue'
+import VueAxios from 'vue-axios'
+import VueRouter from 'vue-router'
 import Home from './components/Home.vue'
-import Dashboard from './components/Dashboard.vue'
-import Register from './components/Register.vue'
+import VueAuth from '@websanova/vue-auth'
 import Login from './components/Login.vue'
+import Register from './components/Register.vue'
+import NotFound from './components/NotFound.vue'
+import Dashboard from './components/Dashboard.vue'
 
 Vue.use(VueRouter)
 
@@ -44,6 +45,14 @@ const router = new VueRouter({
             path: '/dashboard',
             name: 'dashboard',
             component: Dashboard,
+            meta: {
+                auth: true
+            }
+        },
+        {
+            path: '*',
+            name: '404',
+            component: NotFound,
             meta: {
                 auth: true
             }
