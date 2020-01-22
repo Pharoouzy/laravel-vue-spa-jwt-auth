@@ -47,6 +47,9 @@ class AuthController extends Controller {
             'data' => $user
         ]);
     }
+    public function me() {
+        return response()->json($this->guard()->user());
+    }
 
     // refreshes the current token while checking if it's valid
     public function refresh() {

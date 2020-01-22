@@ -35,7 +35,9 @@
                         password: app.password
                     }, 
                     success: function () {},
-                    error: function () {},
+                    error: function (res) {
+                        alert(res.response.data.msg)
+                    },
                     rememberMe: true,
                     redirect: '/dashboard',
                     fetchUser: true,
