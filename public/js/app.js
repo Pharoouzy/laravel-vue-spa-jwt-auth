@@ -3122,7 +3122,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      name: '',
+      email: ''
+    };
+  },
+  methods: {
+    fetchUser: function fetchUser() {
+      var app = this;
+      this.$auth.fetch({
+        params: {
+          name: app.name,
+          email: app.email
+        },
+        success: function success(res) {
+          console.log(res);
+        },
+        error: function error(err) {
+          console.log(err);
+        }
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -3837,7 +3861,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [_vm._v("Laravel – Our Cool Dashboard")]),
+    _c("h1", [_vm._v("Dashboard")]),
     _vm._v(" "),
     _c("ul", [
       _c("li", [_vm._v("Name: " + _vm._s(_vm.$auth.user().name))]),

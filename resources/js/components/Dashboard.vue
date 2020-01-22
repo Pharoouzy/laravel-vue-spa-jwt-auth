@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Laravel – Our Cool Dashboard</h1>
+        <h1>Dashboard</h1>
         <ul>
             <li>Name: {{ $auth.user().name }}</li>
             <li>Email: {{ $auth.user().email }}</li>
@@ -11,6 +11,28 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+            name: '',
+            email: ''
+        }
+    },
+    methods: {
+        fetchUser(){
+            var app = this
+            this.$auth.fetch({
+                params: {
+                    name: app.name,
+                    email: app.email
+                },
+                success: function (res){
+                    console.log(res)
+                },
+                error: function(err){
+                    console.log(err)
+                }
+            })
+        }
+    }
 }
 </script>
