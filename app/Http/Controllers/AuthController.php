@@ -47,16 +47,17 @@ class AuthController extends Controller {
         $credentials = $request->only('email', 'password');
         $token = null;
         if (!$token = JWTAuth::attempt($credentials)) {
-            return $this->respondWithToken($token);
-            // return response([
-            //     'status' => 'error',
-            //     'error' => 'invalid.credentials',
-            //     'msg' => 'Invalid Credentials.'
-            // ], 400);
+            // return $this->respondWithToken($token);
+            return response([
+                'status' => 'error',
+                'error' => 'invalid.credentials',
+                'msg' => 'Invalid Credentials.'
+            ], 400);
         }
         return response([
             'status' => 'success'
         ])->header('Authorization', $token);
+        // return response()->json(['error' => 'Unauthorized'], 401);
     }
 
     // fetches user data
