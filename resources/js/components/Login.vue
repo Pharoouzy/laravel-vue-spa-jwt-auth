@@ -36,7 +36,8 @@
                     }, 
                     success: function () {},
                     error: function (res) {
-                        alert(res.response.data.msg)
+                        app.error = true
+                        // alert(res.response.data.msg)
                     },
                     rememberMe: true,
                     redirect: '/dashboard',
